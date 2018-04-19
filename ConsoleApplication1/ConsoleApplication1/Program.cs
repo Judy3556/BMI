@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-          
+          //
             Console.WriteLine("写出你的身高/m");
             string heigh = Console.ReadLine();
             Console.WriteLine("写出你的体重/kg");
@@ -27,7 +27,7 @@ namespace ConsoleApplication1
             else if (Ex <= 32 && 28 < Ex)
                 Console.WriteLine("你已经肥胖，我不知道你能不能当兵不要问我/too heavy");
             else if (Ex > 32)
-                Console.WriteLine("你过度肥胖，我觉得你当不了兵/you are too heavy that the earth will broke");
+                Console.WriteLine("你过度肥胖");
             
             Console.ReadLine();
         }
