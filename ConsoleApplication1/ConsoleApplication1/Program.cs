@@ -10,25 +10,51 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-          //
-            Console.WriteLine("写出你的身高/m");
+            //定義一個用來充當身高的數
+            Console.WriteLine("請寫出您的身高/m：");
             string heigh = Console.ReadLine();
-            Console.WriteLine("写出你的体重/kg");
+
+            //定義一個用來充當體重的數
+            Console.WriteLine("請寫出您的體重/kg：");
             string weigh = Console.ReadLine();
+
+            //定義兩個數用來計算BMI
             double hh = double.Parse(heigh) * double.Parse(heigh);
             double Ex = double.Parse(weigh) / hh;
-            Console.WriteLine("你的BMI为" + Ex);
+
+            //定義雙精度函數取一位小數點
+            double BMI = Math.Round(Ex, 1);
+
+            //顯示計算所得BMI值
+            Console.WriteLine("您的BMI為");
+            Console.WriteLine(BMI);
+
+            //顯示該BWI值所屬的體重區塊
+            Console.WriteLine("您的體重區塊為");
             if (Ex < 18.5)
-                Console.WriteLine("你的体重偏轻，你加油，有梦想终是好的/sorry, you are too light");
+                Console.WriteLine("體重偏輕");
             else if (18.5 <= Ex && Ex < 23.9)
-                Console.WriteLine("你的体重正常，我相信你可以当兵/good");
+                Console.WriteLine("體重正常");
             else if (Ex <= 27 && 24 < Ex)
-                Console.WriteLine("你的体重偏重，我不知道你能不能当兵不要问我/heavy");
+                Console.WriteLine("體重偏重");
             else if (Ex <= 32 && 28 < Ex)
-                Console.WriteLine("你已经肥胖，我不知道你能不能当兵不要问我/too heavy");
+                Console.WriteLine("肥胖");
             else if (Ex > 32)
-                Console.WriteLine("你过度肥胖");
-            
+                Console.WriteLine("过度肥胖");
+
+            //顯示服兵役體位
+            if (Ex < 16.5)
+                Console.WriteLine("您處於免役體位");
+            else if (Ex >= 16.5 && Ex < 17)
+                Console.WriteLine("您處於替代役體位");
+            else if (Ex >= 17 && Ex <= 31)
+                Console.WriteLine("您處於常備役體位");
+            else if (Ex > 31 && Ex <= 31.5)
+                Console.WriteLine("您處於替代役體位");
+            else if (Ex > 31.5)
+                Console.WriteLine("您處於免役體位");
+
+            //暫停
             Console.ReadLine();
         }
     }
